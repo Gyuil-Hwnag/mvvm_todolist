@@ -6,8 +6,9 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.mvvm_todolist.model.Todo2
 import com.example.mvvm_todolist.model.TodoDao2
+import com.example.mvvm_todolist.model.TodoFind
 
-@Database(entities = [Todo2::class], version = 1, exportSchema = false)
+@Database(entities = [Todo2::class], version = 2, exportSchema = false)
 abstract class TodoDB2 : RoomDatabase() {
     abstract fun todoDao(): TodoDao2
 

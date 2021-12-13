@@ -1,4 +1,4 @@
-package com.example.mvvm_todolist.viewmodel
+package com.example.mvvm_todolist.view
 
 import com.example.mvvm_todolist.model.Todo2
 

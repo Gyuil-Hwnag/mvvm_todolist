@@ -4,14 +4,12 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mvvm_todolist.databinding.TodoItemBinding
-import com.example.mvvm_todolist.model.Todo
 import com.example.mvvm_todolist.model.Todo2
-import com.example.mvvm_todolist.viewmodel.OnItemClick
 
 class TodoAdapter2(listener: OnItemClick) : RecyclerView.Adapter<TodoAdapter2.TodoViewHolder>() {
 
     private val mCallback = listener
-    private val items = ArrayList<Todo2>()
+    private var items = ArrayList<Todo2>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) : TodoViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -30,10 +28,10 @@ class TodoAdapter2(listener: OnItemClick) : RecyclerView.Adapter<TodoAdapter2.To
     fun setList(todo: List<Todo2>) {
         items.clear()
         items.addAll(todo)
+        notifyDataSetChanged()
     }
 
     inner class TodoViewHolder(private val binding: TodoItemBinding):RecyclerView.ViewHolder(binding.root){
-
         fun bind(item: Todo2){
             binding.index.text = item.id.toString()
             binding.todo.text = item.content

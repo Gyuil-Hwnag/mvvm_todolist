@@ -27,6 +27,16 @@ class TodoViewModel(application: Application) : AndroidViewModel(application) {
         repository.delete(todo)
     }
 
+    fun getDateTodo(searchTxt: String): LiveData<List<Todo2>> {
+        var items = repository.getDateTodo(searchTxt)
+        return items
+    }
+
+//    fun getDateTodo(searchTxt: String){
+//        repository.getDateTodo(searchTxt)
+////        Log.d("DiscoverViewModel", "Search $searchTxt")
+//    }
+
     fun getAll2(): LiveData<List<Todo2>> {
         return items
     }

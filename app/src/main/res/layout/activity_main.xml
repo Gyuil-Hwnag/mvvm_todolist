@@ -4,9 +4,13 @@
         <variable
             name="model"
             type="com.example.mvvm_todolist.viewmodel.CallAnotherActivityModel"/>
+        <variable
+            name="viewmodel"
+            type="com.example.mvvm_todolist.viewmodel.TodoViewModel"/>
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:paddingLeft="5dp"
@@ -88,6 +92,7 @@
             android:src="@drawable/search"
             android:layout_marginRight="5dp">
         </ImageView>
+<!--        android:onClick="@{() -> viewmodel.getDateTodo(editText.getText().toString())}"-->
 
         <View
             android:id="@+id/line2"

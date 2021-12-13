@@ -28,6 +28,10 @@ class TodoRepository(application: Application) {
         return todoDao.getAll()
     }
 
+    fun getDateTodo(query: String?): LiveData<List<Todo2>> {
+        return todoDao.getDateTodo(query)
+    }
+
     fun deleteAll() {
         todoDao.deleteAll()
     }
